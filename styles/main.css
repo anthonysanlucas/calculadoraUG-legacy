@@ -134,7 +134,7 @@ body {
   border-radius: var(--b-radius);
   width: 100%;
   max-width: 12rem;
-  height: 4rem;
+  height: 5rem;
   background-color: var(--grey-300);
   color: var(--black-text);
 }
