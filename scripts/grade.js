@@ -19,7 +19,7 @@ document.getElementById('form').addEventListener('submit', event => {
 
 function necesaryExam(AVERAGE) {
   let necesaryGrade = (7 - AVERAGE * 0.4) / 0.6;
-  return `Recuperación: ${roundNumber(necesaryGrade)}`;
+  return `Promedio: ${AVERAGE}\nRecuperación: ${roundNumber(necesaryGrade)}`;
 }
 
 function newGrade(AVERAGE, firstTerm, secondTerm, exam) {
@@ -45,7 +45,8 @@ function mejorationExam(firstTerm, secondTerm, exam) {
 function basicConditions(AVERAGE, exam) {
   if (AVERAGE >= 9.5) return 'Excelente Calificación';
 
-  if (AVERAGE >= 7 && !exam) return 'Válido para mejoramiento';
+  if (AVERAGE >= 7 && !exam)
+    return `Promedio: ${AVERAGE}\nVálido para mejoramiento`;
 
   if (AVERAGE < 3) return 'No válido para recuperación';
 }
