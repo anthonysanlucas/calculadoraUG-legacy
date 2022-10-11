@@ -1,4 +1,6 @@
-## Calculadora UG | Universidad de Guayaquil 
+## Calculadora UG | Universidad de Guayaquil
+
+![calculadoraug](https://user-images.githubusercontent.com/93359372/194979525-d1a49dfc-69a3-4c6b-85cb-49c8a101a804.png)
 
 ### 🤔 ¿Qué es Calculadora UG?
 ¡Calculadora UG es una iniciativa creada en beneficio a la comunidad estudiantil
