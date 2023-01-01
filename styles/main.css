@@ -180,21 +180,40 @@ body {
 }
 
 .footer {
+  display: flex;
+  align-items: center;
   margin-top: auto;
+  padding: 0 1rem;
   width: 100%;
+  min-height: 4rem;
   background-color: var(--accent-color);
-  min-height: 2rem;
-}
-
-.footer__text {
-  font-size: var(--small-font-size);
-  color: rgba(252, 252, 252, 0.8);
-  text-align: center;
-}
-
-.footer__link {
-  text-decoration: none;
   color: var(--white-text);
+  font-size: var(--small-font-size);
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70rem;
+  min-width: 18.75rem;
+  width: 100%;
+}
+
+.footer__button {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--black-text);
+  font-weight: 600;
+  border-radius: var(--b-radius);
+  text-decoration: none;
+}
+
+.footer__source {
+  color: var(--white-text);
+  font-weight: 600;
 }
 
 /* effects */
