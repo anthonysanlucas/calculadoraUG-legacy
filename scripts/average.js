@@ -24,3 +24,5 @@ function cleanInput() {
   document.getElementById('practice').value = '';
   document.getElementById('exam').value = '';
 }
+
+document.getElementById('partialAveragePage').classList.add('active-page');

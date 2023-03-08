@@ -226,6 +226,10 @@ body {
   color: var(--accent-color);
 }
 
+.nav__link.active-page {
+  color: var(--accent-color);
+}
+
 .form__input:hover {
   border-bottom: 1px solid var(--accent-color);
 }
