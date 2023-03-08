@@ -58,10 +58,11 @@ body {
   width: 8rem;
   text-decoration: none;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--black-text);
   font-weight: 600;
   border: 1px solid transparent;
   border-radius: var(--b-radius);
+  transition: color 0.2s;
 }
 
 .two-sections {
@@ -150,7 +151,7 @@ body {
   height: 2rem;
   width: 100%;
   max-width: 12rem;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s;
   border-radius: var(--b-radius);
   box-shadow: 0 5px 10px -1px var(--submit-shadow),
     0 2px 4px -2px var(--submit-shadow);
@@ -209,14 +210,22 @@ body {
   font-weight: 600;
   border-radius: var(--b-radius);
   text-decoration: none;
+  box-shadow: 0 5px 10px -1px var(--submit-shadow),
+    0 2px 4px -2px var(--submit-shadow);
+  transition: background-color 0.2s;
 }
 
 .footer__source {
   color: var(--white-text);
   font-weight: 600;
+  transition: color 0.2s;
 }
 
 /* effects */
+.nav__link:hover {
+  color: var(--accent-color);
+}
+
 .form__input:hover {
   border-bottom: 1px solid var(--accent-color);
 }
@@ -227,9 +236,14 @@ body {
   border-bottom: 1px solid var(--accent-color);
 }
 
-.form__submit:hover,
-.form__submit:focus {
-  transform: scale(1.025);
+.form__submit:hover {
+  background-color: #0071db;
+}
+
+.form__submit:focus,
+.form__submit:active {
+  background-color: var(--accent-color);
+  transition: none;
 }
 
 .form__input:hover ~ .form__label {
@@ -241,6 +255,15 @@ body {
   top: 0;
   font-size: var(--small-font-size);
   color: var(--accent-color);
+}
+
+.footer__button:hover {
+  background-color: var(--grey-300);
+  font-weight: 600;
+}
+
+.footer__source:hover {
+  color: var(--grey-400);
 }
 
 @media (min-width: 60rem) {
