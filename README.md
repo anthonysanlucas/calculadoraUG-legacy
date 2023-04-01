@@ -1,6 +1,6 @@
-## Calculadora UG | Universidad de Guayaquil
+## Calculadora UG | Simulador de Calificaciones de la Universidad de Guayaquil
 
-![calculadoraug](https://user-images.githubusercontent.com/93359372/194979525-d1a49dfc-69a3-4c6b-85cb-49c8a101a804.png)
+[![calculadoraug.png](https://i.postimg.cc/sgCVrtyH/calculadoraug.png)](https://postimg.cc/nCT8KSXq)
 
 ### 🤔 ¿Qué es Calculadora UG?
 ¡Calculadora UG es una iniciativa creada en beneficio a la comunidad estudiantil
