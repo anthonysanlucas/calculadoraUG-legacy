@@ -1,0 +1,93 @@
+---
+interface Props {
+  id: string
+  labelName: string
+  isRequired: boolean
+}
+
+const { id, labelName, isRequired } = Astro.props
+---
+
+<div class="input">
+  {
+    isRequired ? (
+      <input
+        type="number"
+        id={id}
+        class="input__area"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder=" "
+        autocomplete="off"
+        required
+      />
+    ) : (
+      <input
+        type="number"
+        id={id}
+        class="input__area"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder=" "
+        autocomplete="off"
+      />
+    )
+  }
+
+  <label for={id} class="input__label">{labelName}</label>
+</div>
+
+<style>
+  .input {
+    position: relative;
+  }
+
+  .input__area {
+    position: relative;
+    padding: 3rem 10px 0.8rem 0.5rem;
+    border: none;
+    outline: none;
+    border-top-right-radius: var(--b-radius);
+    border-top-left-radius: var(--b-radius);
+    border-bottom: 1px solid var(--gray-300);
+    height: 3rem;
+    width: 100%;
+    max-width: 13rem;
+    min-width: 9rem;
+    background-color: transparent;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  .input__label {
+    position: absolute;
+    top: 1.25rem;
+    left: 2px;
+    padding: 0.3rem;
+    pointer-events: none;
+    color: var(--gray-text);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .input__area:hover {
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  .input__area:focus {
+    background-color: aliceblue;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  .input__area:hover ~ .input__label {
+    color: var(--primary-color);
+  }
+
+  .input__area:focus ~ .input__label,
+  .input__area:not(:placeholder-shown).input__area:not(:focus) ~ .input__label {
+    top: 0;
+    font-size: var(--small-fs);
+    color: var(--primary-color);
+  }
+</style>

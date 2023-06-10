@@ -1,0 +1,31 @@
+<button class="form__submit">Calcular</button>
+
+<style>
+  .form__submit {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: var(--medium-fw);
+    margin-left: auto;
+    margin-right: auto;
+    height: 2.5rem;
+    width: 100%;
+    max-width: 13rem;
+    box-shadow: 0 5px 10px -1px var(--submit-shadow), 0 2px 4px -2px var(--submit-shadow);
+    border: 1px solid transparent;
+    border-radius: var(--b-radius);
+    outline: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .form__submit:hover {
+    background-color: #0071db;
+  }
+
+  .form__submit:focus,
+  .form__submit:active {
+    background-color: var(--primary-color);
+    border-color: black;
+    transition: none;
+  }
+</style>

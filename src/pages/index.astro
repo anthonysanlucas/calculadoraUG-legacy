@@ -1,0 +1,75 @@
+---
+import Base from '@/layout/Base.astro'
+import Form from '@/components/form/Form.astro'
+import FormInput from '@/components/form/FormInput.astro'
+import FormOutput from '@/components/form/FormOutput.astro'
+import SubmitButton from '@/components/form/SubmitButton.astro'
+---
+
+<Base
+  title="Promedio parcial | Simulador de calificaciones de la Universidad de Guayaquil | Calculadora UG"
+  description="Calcula tu promedio parcial, calificación de final de semestre o averigua cuánto debes obtener en el examen de recuperación para aprobar.">
+  <section>
+    <h1 class="titlePage">Calculadora de Promedio Parcial</h1>
+    <Form formId="partialgradeForm">
+      <Fragment slot="inputs">
+        <FormInput id="formative-grade" labelName="Evaluación Formativa" isRequired={true} />
+        <FormInput id="practice-grade" labelName="Gestión Práctica" isRequired={true} />
+        <FormInput id="exam-grade" labelName="Acreditación y Validación" isRequired={true} />
+      </Fragment>
+      <Fragment slot="actions">
+        <FormOutput id="partial-result" />
+        <SubmitButton />
+      </Fragment>
+    </Form>
+  </section>
+
+  <style>
+    section {
+      margin: 2rem 0;
+    }
+
+    .titlePage {
+      margin: 0;
+      font-size: var(--large-fs);
+      font-weight: var(--regular-fw);
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 17.5rem;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 31.25rem) {
+      .titlePage {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    const formativegradeInput = document.getElementById('formative-grade') as HTMLInputElement
+    const practicegradeInput = document.getElementById('practice-grade') as HTMLInputElement
+    const examgradeInput = document.getElementById('exam-grade') as HTMLInputElement
+    const partialResult = document.getElementById('partial-result') as HTMLTextAreaElement
+
+    document.getElementById('partialgradeForm').addEventListener('submit', e => {
+      e.preventDefault()
+
+      partialResult.value = partialAverage(
+        formativegradeInput.valueAsNumber,
+        practicegradeInput.valueAsNumber,
+        examgradeInput.valueAsNumber
+      )
+    })
+
+    function partialAverage(formativeGrade: number, practiceGrade: number, examGrade: number) {
+      return `Promedio Parcial: ${roundNumber(
+        formativeGrade * 0.33 + practiceGrade * 0.33 + examGrade * 0.34
+      )}`
+    }
+
+    function roundNumber(value: number): number {
+      return +(Math.round(parseFloat(value + 'e+2')) + 'e-2')
+    }
+  </script>
+</Base>
