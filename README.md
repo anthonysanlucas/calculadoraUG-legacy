@@ -1,8 +1,9 @@
-## Calculadora UG | Simulador de Calificaciones de la Universidad de Guayaquil
+# Calculadora UG | Simulador de Calificaciones de la Universidad de Guayaquil
 
 [![calculadoraug.png](https://i.postimg.cc/sgCVrtyH/calculadoraug.png)](https://postimg.cc/nCT8KSXq)
 
-### 🤔 ¿Qué es Calculadora UG?
+## 🤔 ¿Qué es Calculadora UG?
+
 ¡Calculadora UG es una iniciativa creada en beneficio a la comunidad estudiantil
 de la **Universidad de Guayaquil**!
 
@@ -10,13 +11,13 @@ Mediante este sitio web los estudiantes pueden calcular rápidamente su promedio
 
 Puedes acceder desde: [calculadoraug.live](https://calculadoraug.live/)
 
-### 💡 Tengo una idea ¿Cómo puedo contribuir?
-En caso de querer contribuir al proyecto puedes: 
-+ Crear una `Issue` en el repositorio y dejar una descripción detallada sobre alguna idea, retroalimentación o errores.
-+ Realizar un `Fork` del repositorio, crear una nueva rama de desarrollo, generar los cambios necesarios y envíar una `pull request`.
+## 💡 Tengo una idea ¿Cómo puedo contribuir?
 
-### 🧱 ¿Con qué ha sido creado?
-Este sitio web está creado con html, css y javascript. Además, a nivel de metodología se usa [BEM](https://getbem.com/) para la creación de componentes reutilizables. 
+En caso de querer contribuir al proyecto puedes:
+
+- Crear una `Issue` en el repositorio y dejar una descripción detallada sobre alguna idea, retroalimentación o error.
+- Realizar un `Fork` del repositorio, crear una nueva rama de desarrollo, generar los cambios necesarios y envíar una `pull request`.
 
 ### Licencia
->MIT License
+
+> MIT License

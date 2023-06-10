@@ -1,0 +1,54 @@
+<footer class="footer">
+  <nav>
+    <span>Otros enlaces</span>
+    <ul class="footer__links">
+      <li>
+        <a class="footer__link" href="https://servicioenlinea.ug.edu.ec/SIUG/">SIUG</a>
+      </li>
+      <li>
+        <a class="footer__link" href="https://campusvirtual.ug.edu.ec/">Campus Virtual</a>
+      </li>
+      <li>
+        <a class="footer__link" href="https://www.ug.edu.ec/">Universidad de Guayaquil</a>
+      </li>
+    </ul>
+  </nav>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 75rem;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .footer__links {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .footer nav span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: var(--regular-fw);
+    color: var(--black-text);
+  }
+
+  .footer__link {
+    display: block;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    font-weight: var(--bold-fw);
+    color: var(--gray-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer__link:hover {
+    color: #0071db;
+  }
+</style>

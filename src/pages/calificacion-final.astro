@@ -1,0 +1,148 @@
+---
+import Base from '@/layout/Base.astro'
+import Form from '@/components/form/Form.astro'
+import FormInput from '@/components/form/FormInput.astro'
+import FormOutput from '@/components/form/FormOutput.astro'
+import SubmitButton from '@/components/form/SubmitButton.astro'
+import InstructionStep from '@/components/InstructionStep.astro'
+---
+
+<Base
+  title="Calificación final | Simulador de calificaciones de la Universidad de Guayaquil | Calculadora UG"
+  description="Calcula tu calificación de final de semestre o cuánto debes obtener en el examen de recuperación para aprobar.">
+  <div class="two-col">
+    <section>
+      <h1 class="titlePage">Calculadora de Calificación Final</h1>
+      <Form formId="finalgradeForm">
+        <Fragment slot="inputs">
+          <FormInput id="firstterm-grade" labelName="Primer Parcial" isRequired={true} />
+          <FormInput id="secondterm-grade" labelName="Segundo Parcial" isRequired={true} />
+          <FormInput id="exam-grade" labelName="Examen" isRequired={false} />
+        </Fragment>
+        <Fragment slot="actions">
+          <FormOutput id="final-result" />
+          <SubmitButton />
+        </Fragment>
+      </Form>
+    </section>
+    <section class="instructions">
+      <h3 class="instructions__title">Guía de uso rápido</h3>
+      <InstructionStep>
+        Ingresa solo tus calificaciones parciales si quieres saber cuánto necesitas obtener en el
+        examen de recuperación para aprobar.
+      </InstructionStep>
+      <InstructionStep>
+        En caso de haber rendido el examen de recuperación o mejoramiento, ingresa tus
+        calificaciones parciales y la obtenida en el examen para obtener tu calificación de final de
+        semestre.
+      </InstructionStep>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 70rem;
+    margin: 2rem auto;
+  }
+
+  .instructions {
+    width: min(97%, 37.5rem);
+    margin: 1rem auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .instructions__title {
+    font-size: var(--large-fs);
+    font-weight: var(--regular-fw);
+    color: var(--black-text);
+    margin: 0;
+  }
+
+  @media (min-width: 800px) {
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .instructions {
+      margin: 0;
+    }
+  }
+</style>
+
+<script>
+  const firstTermInput = document.getElementById('firstterm-grade') as HTMLInputElement
+  const secondTermInput = document.getElementById('secondterm-grade') as HTMLInputElement
+  const examInput = document.getElementById('exam-grade') as HTMLInputElement
+  const finalResult = document.getElementById('final-result') as HTMLInputElement
+
+  document.getElementById('finalgradeForm').addEventListener('submit', e => {
+    e.preventDefault()
+
+    const firsttermGrade = firstTermInput.valueAsNumber
+    const secondtermGrade = secondTermInput.valueAsNumber
+    const examGrade = examInput.valueAsNumber ?? null
+
+    const PARTIAL_AVERAGE = average(firsttermGrade, secondtermGrade)
+
+    finalResult.value = basicConditions(PARTIAL_AVERAGE, examGrade)
+
+    if (PARTIAL_AVERAGE >= 3 && examGrade)
+      return (finalResult.value = newGrade(
+        PARTIAL_AVERAGE,
+        firsttermGrade,
+        secondtermGrade,
+        examGrade
+      ))
+
+    if (PARTIAL_AVERAGE >= 3 && PARTIAL_AVERAGE < 7 && !examGrade)
+      return (finalResult.value = necesaryExam(PARTIAL_AVERAGE))
+  })
+
+  function basicConditions(partialAverage: number, examGrade: number) {
+    if (partialAverage >= 9.5) return `Promedio:  ${partialAverage} \nExcelente Calificación`
+
+    if (partialAverage >= 7 && !examGrade)
+      return `Promedio: ${partialAverage} \nVálido para mejoramiento`
+
+    if (partialAverage < 3) return `Promedio: ${partialAverage} \nNo válido para recuperación`
+  }
+
+  function necesaryExam(partialAverage: number) {
+    return `Promedio: ${partialAverage} \nRecuperación: ${roundNumber(
+      (7 - partialAverage * 0.4) / 0.6
+    )}`
+  }
+
+  function newGrade(
+    partialAverage: number,
+    firsttermGrade: number,
+    secondtermGrade: number,
+    examGrade: number
+  ) {
+    return partialAverage >= 7
+      ? `Calificación Final: ${mejorationExam(firsttermGrade, secondtermGrade, examGrade)}`
+      : `Calificación Final: ${recuperationExam(partialAverage, examGrade)}`
+  }
+
+  function mejorationExam(firsttermGrade: number, secondtermGrade: number, examGrade: number) {
+    return examGrade < firsttermGrade && examGrade < secondtermGrade
+      ? average(firsttermGrade, secondtermGrade)
+      : average(examGrade, Math.max(firsttermGrade, secondtermGrade))
+  }
+
+  function recuperationExam(partialAverage: number, examGrade: number) {
+    return roundNumber(0.6 * examGrade + 0.4 * partialAverage)
+  }
+
+  function average(firstNumber: number, secondNumber: number) {
+    return roundNumber((firstNumber + secondNumber) / 2)
+  }
+
+  function roundNumber(value: number): number {
+    return +(Math.round(parseFloat(value + 'e+2')) + 'e-2')
+  }
+</script>

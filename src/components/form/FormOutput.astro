@@ -1,0 +1,25 @@
+---
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+---
+
+<textarea class="form__output" id={id} cols="30" rows="1" placeholder="Resultado:" disabled>
+</textarea>
+
+<style>
+  .form__output {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 13rem;
+    height: 5.5rem;
+    background-color: #dfe9f3;
+    color: var(--black-text);
+    font-weight: var(--regular-fw);
+    line-height: 1.5;
+    border: none;
+    border-radius: var(--b-radius);
+  }
+</style>
