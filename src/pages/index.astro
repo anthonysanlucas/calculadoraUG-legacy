@@ -4,6 +4,7 @@ import Form from '@/components/form/Form.astro'
 import FormInput from '@/components/form/FormInput.astro'
 import FormOutput from '@/components/form/FormOutput.astro'
 import SubmitButton from '@/components/form/SubmitButton.astro'
+import GeoServices from '@/components/sponsor/GeoServices.astro'
 ---
 
 <Base
@@ -23,26 +24,11 @@ import SubmitButton from '@/components/form/SubmitButton.astro'
       </Fragment>
     </Form>
   </section>
+  <GeoServices />
 
   <style>
     section {
-      margin: 2rem 0;
-    }
-
-    .titlePage {
-      margin: 0;
-      font-size: var(--large-fs);
-      font-weight: var(--regular-fw);
-      text-align: center;
-      padding: 0 1rem;
-      max-width: 17.5rem;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 31.25rem) {
-      .titlePage {
-        max-width: 100%;
-      }
+      margin: 4rem 0;
     }
   </style>
 

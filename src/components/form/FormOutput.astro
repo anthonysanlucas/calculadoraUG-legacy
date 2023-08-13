@@ -15,11 +15,15 @@ const { id } = Astro.props
     width: 100%;
     max-width: 13rem;
     height: 5.5rem;
-    background-color: #dfe9f3;
-    color: var(--black-text);
+    background-color: var(--bg-gray);
+    color: var(--white-text);
     font-weight: var(--regular-fw);
     line-height: 1.5;
     border: none;
     border-radius: var(--b-radius);
+  }
+
+  .form__output::placeholder {
+    color: var(--white-text);
   }
 </style>

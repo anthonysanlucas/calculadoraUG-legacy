@@ -1,0 +1,189 @@
+---
+import GeoServicesLogo from './GeoServicesLogo.astro'
+
+const Services = [
+  'Servicio de Reparación y Mantenimiento de Computadoras',
+  'Licencias de Software',
+  'Equipos Tecnológicos',
+  'Desarrollo web para Emprendedores Estudiantiles'
+]
+---
+
+<section id="geoServices" class="geoservices">
+  <div class="geoservices__header">
+    <GeoServicesLogo />
+    <p>Los Mejores Precios para Estudiantes en:</p>
+  </div>
+  <ul class="geoservices__services">
+    {
+      Services.map(service => (
+        <li>
+          <svg
+            width="20"
+            height="23"
+            viewBox="0 0 20 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.0485 10.2269C18.0182 9.93945 17.988 9.66714 17.9426 9.39482L19.4252 7.20118L18.5477 5.56729L17.6551 3.9334L15.4917 4.84112C15.3102 4.6747 15.1135 4.53854 14.9168 4.40239L14.7656 1.69437L13.1619 1.37667L11.5432 1.0741L10.4085 3.54006C10.1816 3.58544 9.95467 3.66109 9.72774 3.73673L8.04847 2.10284L6.62638 3.31313L5.21942 4.50829L3.1468 8.21479L2.76859 10.2118L2.37524 12.2239L3.40399 12.8593L3.13167 13.3434C3.16193 13.6308 3.64605 14.5991 3.69143 14.8714L3.85785 15.068L2.95013 16.4145L3.82759 18.0484L4.70505 19.6823L6.86844 18.7745C7.04998 18.941 7.24665 19.0771 7.44332 19.2133L7.59461 21.9213L9.21337 22.2239L10.8321 22.5264L11.9516 20.0605C12.1786 20 12.4206 19.9394 12.6476 19.8638L14.3268 21.4977L15.7489 20.3025L17.171 19.1074L16.5961 16.5355C16.7474 16.2935 16.8836 16.0514 17.0046 15.7942L19.2436 15.4009L19.6218 13.3888L20.0001 11.3767L18.0485 10.2269ZM10.3934 15.9758C8.53258 15.6278 7.38281 13.4644 7.82154 11.1649C8.26027 8.86532 10.1211 7.27682 11.9819 7.63991C13.8427 7.98786 14.9925 10.1513 14.5538 12.4508C14.0999 14.7503 12.2391 16.3388 10.3934 15.9758Z"
+              fill="#34146D"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.1271 9.48563C16.0968 9.19818 16.0666 8.91074 16.006 8.6233L17.534 6.35401L16.6415 4.65961L15.7337 2.95008L13.5098 3.90318C13.3283 3.73676 13.1316 3.58548 12.9198 3.44932L12.7685 0.650529L11.1044 0.332829L9.45537 0L8.29047 2.55673C8.04841 2.61725 7.80635 2.67776 7.57942 2.76853L5.83964 1.07413L4.38729 2.3298L2.93495 3.57035L3.52496 6.24811C3.37368 6.49017 3.23752 6.74735 3.10136 7.00454L0.786687 7.41301L0.393343 9.50075L0 11.5885L1.98185 12.8139C2.0121 13.1014 2.04236 13.3888 2.10287 13.6762L0.574886 15.9455L1.46747 17.6399L2.36006 19.3343L4.58396 18.3964C4.76551 18.5628 4.96218 18.7141 5.17398 18.8502L5.32526 21.649L6.98941 21.9667L8.65355 22.2844L9.81846 19.7277C10.0605 19.6672 10.3026 19.6067 10.5295 19.5159L12.2542 21.2103L13.7065 19.9546L15.1588 18.6989L14.5688 16.0212C14.7201 15.7791 14.8563 15.5219 14.9924 15.2647L17.292 14.8563L17.6853 12.7685L18.0787 10.6808L16.1271 9.48563ZM8.1997 15.643C6.21785 15.2647 4.99243 12.9501 5.46142 10.469C5.93041 7.9879 7.92738 6.27836 9.90923 6.65658C11.8911 7.03479 13.1165 9.34947 12.6475 11.8306C12.1785 14.3116 10.1967 16.0212 8.1997 15.643Z"
+              fill="url(#paint0_radial_403_5)"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.7336 2.95007L17.655 3.93343L19.4099 7.20121L17.5339 6.35401L15.7336 2.95007Z"
+              fill="#664E98"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.0212 8.62329L17.9274 9.39485L19.41 7.20121L17.5341 6.354L16.0212 8.62329Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M19.2133 15.4161L17.3223 14.8715L15.0227 15.2799L14.5991 16.0515L16.5658 16.5356L16.9743 15.8094L19.2133 15.4161Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.0212 8.62329L16.1271 9.48562L18.0485 10.2269L17.9274 9.39485L16.0212 8.62329Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.1407 19.1225L15.1891 18.714L14.5991 16.0514L16.5658 16.5355L17.1407 19.1225Z"
+              fill="#664E98"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M14.3116 21.5128L12.2693 21.2254L15.1891 18.7141L17.1407 19.1225L14.3116 21.5128Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.817 22.5567L8.6687 22.2995L9.8336 19.7428L11.6944 20.6505L10.817 22.5567Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.21942 19.4705L4.70505 19.6974L2.37524 19.3343L4.59915 18.3964L5.18916 18.8502L5.21942 19.4705Z"
+              fill="#3E207C"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.8396 1.0741L8.57788 1.90617L8.29043 2.5567L7.57939 2.7685L5.8396 1.0741Z"
+              fill="#664E98"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.7837 0.635376L14.7807 1.69438L14.8714 3.32827L13.5099 3.90315L12.9198 3.43417L12.7837 0.635376Z"
+              fill="#3E207C"
+            />
+            <defs>
+              <radialGradient
+                id="paint0_radial_403_5"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(11.7253 6.06506) rotate(3.79578) scale(10.1099)">
+                <stop stop-color="#2478FE" />
+                <stop offset="0.9944" stop-color="#804AD6" />
+              </radialGradient>
+            </defs>
+          </svg>
+          <span>{service}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <a
+    class="geoservices__cta"
+    href="https://wa.me/message/TYATHDJLLQJRM1"
+    target="_blank"
+    rel="noopener noreferrer">
+    Contáctanos Ahora
+  </a>
+</section>
+
+<style>
+  .geoservices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.5rem;
+    margin-top: 10rem;
+    margin-bottom: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .geoservices__header {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+  }
+
+  .geoservices__header > p {
+    text-align: center;
+    font-size: var(--large-fs);
+    font-weight: var(--bold-fw);
+    color: var(--white-text);
+    margin: 0;
+  }
+
+  .geoservices__services {
+    list-style: none;
+    padding: 0;
+  }
+
+  .geoservices__services li {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 1rem;
+    color: var(--white-text);
+    font-size: var(--regular-fs);
+    font-weight: var(--regular-fw);
+    margin: 0.5rem;
+  }
+
+  .geoservices__cta {
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #fa652c 20%, #f15237 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: var(--bold-fw);
+    padding: 1rem 2rem;
+    border-radius: var(--b-radius);
+  }
+
+  .geoservices__cta:hover {
+    background-image: linear-gradient(90deg, #f15237 20%, #fa652c 100%);
+  }
+</style>
+
+<script>
+  setTimeout(() => {
+    window.location.href = './#geoServices'
+  }, 8000)
+</script>

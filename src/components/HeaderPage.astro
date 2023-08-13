@@ -47,8 +47,8 @@ import Logo from '@/components/Logo.astro'
     display: block;
     text-decoration: none;
     text-align: center;
-    color: var(--black-text);
-    font-weight: var(--bold-fw);
+    color: var(--white-text);
+    font-weight: var(--medium-fw);
     font-size: var(--small-fs);
     padding: 0.75rem;
     border-radius: var(--b-radius);
@@ -56,11 +56,11 @@ import Logo from '@/components/Logo.astro'
   }
 
   .nav__link:hover {
-    background-color: rgba(203, 213, 225, 0.5);
+    background-color: var(--bg-gray);
   }
 
   .nav__link.active-page {
-    color: var(--primary-color);
+    color: var(--primary-color-light);
   }
 
   @media (min-width: 34.375rem) {

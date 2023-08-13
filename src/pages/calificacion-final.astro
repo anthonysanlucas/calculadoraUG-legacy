@@ -5,6 +5,7 @@ import FormInput from '@/components/form/FormInput.astro'
 import FormOutput from '@/components/form/FormOutput.astro'
 import SubmitButton from '@/components/form/SubmitButton.astro'
 import InstructionStep from '@/components/InstructionStep.astro'
+import GeoServices from '@/components/sponsor/GeoServices.astro'
 ---
 
 <Base
@@ -38,6 +39,7 @@ import InstructionStep from '@/components/InstructionStep.astro'
       </InstructionStep>
     </section>
   </div>
+  <GeoServices />
 </Base>
 
 <style>
@@ -45,7 +47,7 @@ import InstructionStep from '@/components/InstructionStep.astro'
     display: grid;
     grid-template-columns: 1fr;
     max-width: 70rem;
-    margin: 2rem auto;
+    margin: 4rem auto;
   }
 
   .instructions {
@@ -58,7 +60,7 @@ import InstructionStep from '@/components/InstructionStep.astro'
   .instructions__title {
     font-size: var(--large-fs);
     font-weight: var(--regular-fw);
-    color: var(--black-text);
+    color: var(--white-text);
     margin: 0;
   }
 

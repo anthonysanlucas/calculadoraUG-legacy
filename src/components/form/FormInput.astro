@@ -57,6 +57,7 @@ const { id, labelName, isRequired } = Astro.props
     max-width: 13rem;
     min-width: 9rem;
     background-color: transparent;
+    color: var(--white-text);
     transition: border-color 0.2s ease-in-out;
   }
 
@@ -66,7 +67,7 @@ const { id, labelName, isRequired } = Astro.props
     left: 2px;
     padding: 0.3rem;
     pointer-events: none;
-    color: var(--gray-text);
+    color: var(--white-text);
     transition: all 0.2s ease-in-out;
   }
 
@@ -75,19 +76,19 @@ const { id, labelName, isRequired } = Astro.props
   }
 
   .input__area:focus {
-    background-color: aliceblue;
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
+    /* background-color: aliceblue; */
+    background-color: var(--bg-gray);
+    border-bottom: 1px solid var(--primary-color-light);
   }
 
   .input__area:hover ~ .input__label {
-    color: var(--primary-color);
+    color: var(--primary-color-light);
   }
 
   .input__area:focus ~ .input__label,
   .input__area:not(:placeholder-shown).input__area:not(:focus) ~ .input__label {
     top: 0;
     font-size: var(--small-fs);
-    color: var(--primary-color);
+    color: var(--white-text);
   }
 </style>

@@ -48,11 +48,16 @@ const { title, description } = Astro.props
 
 <style is:global>
   :root {
-    --bg-white-gradient: linear-gradient(to left, #dfe9f3 0%, white 100%);
+    /* --bg-white-gradient: linear-gradient(to left, #dfe9f3 0%, white 100%); */
+    --bg-purple-gradient: linear-gradient(to right, #1e0354 10%, #110024 100%);
+    --bg-gray: rgba(203, 213, 225, 0.5);
     --primary-color: #00539f;
+    --primary-color-light: #0084ff;
     --gray-300: #d1d5db;
     --black-text: #030712;
+    --white-text: #ffffff;
     --gray-text: #374151;
+    --gray-text-light: #949eb0;
     --submit-shadow: rgba(59, 130, 246, 0.3);
     --small-fs: 0.75rem;
     --regular-fs: 1rem;
@@ -67,6 +72,7 @@ const { title, description } = Astro.props
     margin: 0;
     font-size: var(--large-fs);
     font-weight: var(--regular-fw);
+    color: var(--white-text);
     text-align: center;
     padding: 0 1rem;
     max-width: 17.5rem;
@@ -92,6 +98,8 @@ const { title, description } = Astro.props
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
   }
 
   *,
@@ -110,7 +118,7 @@ const { title, description } = Astro.props
   body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
-    background-image: var(--bg-white-gradient);
+    background-image: var(--bg-purple-gradient);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
