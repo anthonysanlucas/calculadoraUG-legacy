@@ -115,6 +115,7 @@ const Services = [
     }
   </ul>
   <a
+    id="geoServicesCta"
     class="geoservices__cta"
     href="https://wa.me/message/TYATHDJLLQJRM1"
     target="_blank"
@@ -186,4 +187,24 @@ const Services = [
   setTimeout(() => {
     window.location.href = './#geoServices'
   }, 8000)
+
+  document.getElementById('geoServicesCta').addEventListener('click', () => {
+    const API =
+      'https://script.google.com/macros/s/AKfycbxPd7QsRwCf_tkXLtzIvliNahArMoCMjrZp6QudWUovCArkFj8UBJf7ZAdGKrwU10gT/exec'
+
+    let currentDate = new Date()
+
+    let obj = {
+      date: currentDate.toLocaleString()
+    }
+
+    fetch(API, {
+      method: 'POST',
+      body: JSON.stringify(obj)
+    })
+      .then(res => res.text())
+      .then(data => {
+        console.log(data)
+      })
+  })
 </script>
